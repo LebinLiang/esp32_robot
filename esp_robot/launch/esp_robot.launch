@@ -1,0 +1,39 @@
+<launch>
+    
+
+    <!-- Connect Mode -->
+    <param name="esp_url" value='http://192.168.43.37' />
+    <param name="ctrl_url" value='192.168.43.37' />
+    <param name="ctrl_port" value='81' />
+    
+    <!-- Camera -->
+    <param name="camera_image_topic" type="str" value="ep_cam/image_raw" />
+    <param name="camera_info_topic" type="str" value="ep_cam/camera_info" />
+    
+    <!-- IMU -->
+    <param name="imu_topic" type="str" value="imu_data" />
+    <param name="imu_frame_id" type="str" value="imu_link" />
+    
+    <!-- Odom -->
+    <param name="odom_topic" type="str" value="odom" />
+    <param name="odom_frame_id" type="str" value="base_link" />
+
+    <!-- CMD_Topic -->
+    <param name="cmd_topic" type="str" value="cmd_vel" />
+    
+    <!-- LED Setting -->
+    <param name="led_r" type="int" value="255" />   <!-- 0-255 -->
+    <param name="led_g" type="int" value="0" />
+    <param name="led_b" type="int" value="0" />
+    
+    <!-- Chassis Size -->
+    <param name="chassis_shape_a" value="0.1" />
+    <param name="chassis_shape_b" value="0.1" />
+    <param name="chassis_wheel_r" value="0.05" />
+
+        <!-- Run the rmep_base nodes -->
+    <node pkg = "esp_robot" type="esp_robot.py" name="esp_robot" output="screen" />
+    
+    
+      
+</launch>
